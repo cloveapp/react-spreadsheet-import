@@ -1,6 +1,6 @@
 {
   "name": "@clovecx/react-spreadsheet-import",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "description": "Clove's fork of RSI to make deployment easier: React spreadsheet import for xlsx and csv files with column matching and validation",
   "main": "./dist-commonjs/index.js",
   "module": "./dist/index.js",
@@ -17,8 +17,9 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.ts",
     "build-storybook": "build-storybook -o docs-build",
-    "release:minor": "git checkout clove-deploy && git pull && npm run test && npm run ts && npm run build && npm version patch && git add -A && git push && git push --tags && npm publish --access public",
-    "release:major": "git checkout clove-deploy && git pull && npm run test && npm run ts && npm run build && npm version major && git add -A && git push && git push --tags && npm publish --access public",
+    "release:clove": "git checkout clove-deploy && git pull && npm run test && npm run ts && npm run build && npm version prerelease --preid=clove && git add -A && git push && git push --tags && npm publish --access public",
+    "release:minor": "git checkout master && git pull && npm run test && npm run ts && npm run build && npm version patch && git add -A && git push && git push --tags && npm publish",
+    "release:major": "git checkout master && git pull && npm run test && npm run ts && npm run build && npm version major && git add -A && git push && git push --tags && npm publish",
     "clean": "rimraf dist"
   },
   "repository": {
