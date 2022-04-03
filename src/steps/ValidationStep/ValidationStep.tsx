@@ -30,7 +30,7 @@ export const ValidationStep = <T extends string>({ initialData }: Props<T>) => {
     (rows: typeof data) => {
       setData(addErrorsAndRunHooks<T>(rows, fields, rowHook, tableHook))
     },
-    [setData, addErrorsAndRunHooks, rowHook, tableHook],
+    [setData, addErrorsAndRunHooks, fields, rowHook, tableHook],
   )
 
   const deleteSelectedRows = () => {
