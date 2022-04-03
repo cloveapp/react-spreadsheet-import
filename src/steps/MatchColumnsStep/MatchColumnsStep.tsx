@@ -96,7 +96,7 @@ export const MatchColumnsStep = <T extends string>({ data, headerValues, onConti
         }),
       )
     },
-    [columns, setColumns],
+    [fields, columns, setColumns],
   )
 
   const onIgnore = useCallback(
