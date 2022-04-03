@@ -17,6 +17,8 @@ export type RsiProps<T extends string> = {
   initialHook?: InitHook<T>
   // Function called after user finishes the flow
   onSubmit: (data: Result<T>) => void
+  // Function called any time that the header row is selected
+  onHeaderRowSelected?: (headers: string[]) => void
   // Allows submitting with errors. Default: true
   allowInvalidSubmit?: boolean
   // Translations for each text

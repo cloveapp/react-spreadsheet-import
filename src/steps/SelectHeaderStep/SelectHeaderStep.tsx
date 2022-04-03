@@ -14,13 +14,18 @@ export const SelectHeaderStep = ({ data, onContinue }: SelectHeaderProps) => {
   const styles = useStyleConfig(
     "SelectHeaderStep",
   ) as typeof themeOverrides["components"]["SelectHeaderStep"]["baseStyle"]
-  const { translations } = useRsi()
+  const { translations, onHeaderRowSelected } = useRsi()
   const [selectedRows, setSelectedRows] = useState<ReadonlySet<number>>(new Set([0]))
 
   const handleContinue = useCallback(() => {
     const [selectedRowIndex] = selectedRows
     // We consider data above header to be redundant
     const trimmedData = data.slice(selectedRowIndex + 1)
+
+    if (onHeaderRowSelected) {
+      onHeaderRowSelected(data[selectedRowIndex])
+    }
+
     onContinue(data[selectedRowIndex], trimmedData)
   }, [onContinue, data, selectedRows])
 
