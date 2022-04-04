@@ -12,7 +12,7 @@ type DropZoneProps = {
 }
 
 export const DropZone = ({ onContinue }: DropZoneProps) => {
-  const { translations, maxFileSize } = useRsi()
+  const { translations, maxFileSize, onFileSelected } = useRsi()
   const styles = useStyleConfig("UploadStep") as typeof themeOverrides["components"]["UploadStep"]["baseStyle"]
   const {
     colors: { rsi },
@@ -43,6 +43,7 @@ export const DropZone = ({ onContinue }: DropZoneProps) => {
       const arrayBuffer = await readFileAsync(file)
       const workbook = XLSX.read(arrayBuffer)
       setLoading(false)
+      onFileSelected(file)
       onContinue(workbook)
     },
   })
