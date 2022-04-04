@@ -8,7 +8,7 @@ export type RsiProps<T extends string> = {
   // callback when RSI is closed before final submit
   onClose: () => void
   // callback when a file is selected
-  onFileSelected: (file: File) => void
+  onFileSelected?: (file: File) => void
   // Field description for requested data
   fields: Fields<T>
   // Runs after column matching and on entry change, more performant
