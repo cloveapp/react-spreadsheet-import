@@ -1,6 +1,6 @@
 {
   "name": "@clovecx/react-spreadsheet-import",
-  "version": "1.0.5-clove.3",
+  "version": "1.0.6-clove.0",
   "description": "Clove's fork of RSI to make deployment easier: React spreadsheet import for xlsx and csv files with column matching and validation",
   "main": "./dist-commonjs/index.js",
   "module": "./dist/index.js",
