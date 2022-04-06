@@ -95,8 +95,3 @@ export const addIndexes = <T extends string>(arr: Data<T>[]): (Data<T> & { __ind
     }
     return { ...value, __index: index }
   })
-
-export const resetIndexes = <T extends string>(arr: Data<T>[]): (Data<T> & { __index: number })[] =>
-  arr.map((value, index) => {
-    return { ...value, __index: index }
-  })
