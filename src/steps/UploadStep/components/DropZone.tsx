@@ -41,7 +41,7 @@ export const DropZone = ({ onContinue }: DropZoneProps) => {
     onDrop: async ([file]) => {
       setLoading(true)
       const arrayBuffer = await readFileAsync(file)
-      const workbook = XLSX.read(arrayBuffer)
+      const workbook = XLSX.read(arrayBuffer, { raw: true })
       setLoading(false)
       if (onFileSelected) { onFileSelected(file) }
       onContinue(workbook)
